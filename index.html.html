@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<!-- Default theme on load: change data-theme below to any of:
+     plum, blush, pinkgreen, noir, burgundyteal, plumpeach,
+     plumblue, moss, slaterose, maroonteal, plumelectric
+       and update the matching value in the very last line of the
+     <script> at the bottom of this file so the right swatch shows
+     as selected too. -->
+<html lang="en" data-theme="plum">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Tumi Seweje, Chemical Engineering portfolio">
+<title>Tumi Seweje, Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --font-display: 'Fraunces', serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  /* ---------- THEMES ---------- */
+  html[data-theme="plum"] {
+    --hero-bg: #4B1E2F; --hero-text: #F5F1EC; --hero-sub: #D9BFC4;
+    --tab-inactive: #C8BFB6; --tab-inactive-text: #4B1E2F;
+    --panel-bg: #F5F1EC; --panel-text: #2B1620;
+    --accent: #6D2E3A; --accent-soft: #2F6FED;
+    --card-bg: #FFFDFB; --border: #DED3C8; --grid-line: rgba(245,241,236,0.06);
+  }
+  html[data-theme="plumgreen"] {
+    --hero-bg: #4B1E2F; --hero-text: #F5F1EC; --hero-sub: #D9BFC4;
+    --tab-inactive: #C8BFB6; --tab-inactive-text: #4B1E2F;
+    --panel-bg: #F5F1EC; --panel-text: #2B1620;
+    --accent: #6D2E3A; --accent-soft: #7C9878;
+    --card-bg: #FFFDFB; --border: #DED3C8; --grid-line: rgba(245,241,236,0.06);
+  }
+  html[data-theme="blush"] {
+    --hero-bg: #4A1F2D; --hero-text: #F7F4F2; --hero-sub: #E6CFCF;
+    --tab-inactive: #E6CFCF; --tab-inactive-text: #4A1F2D;
+    --panel-bg: #F7F4F2; --panel-text: #2B2B2B;
+    --accent: #6A2C3A; --accent-soft: #9C5A68;
+    --card-bg: #FFFFFF; --border: #E6DAD6; --grid-line: rgba(247,244,242,0.06);
+  }
+  html[data-theme="pinkgreen"] {
+    --hero-bg: #93AD75; --hero-text: #3A1220; --hero-sub: #4A1B2C;
+    --tab-inactive: #D8A7A7; --tab-inactive-text: #4A2A32;
+    --panel-bg: #F4F1EA; --panel-text: #38352C;
+    --accent: #5E6B5C; --accent-soft: #965038;
+    --card-bg: #FFFFFF; --border: #E1DACB; --grid-line: rgba(58,18,32,0.08);
+  }
+  html[data-theme="noir"] {
+    --hero-bg: #121212; --hero-text: #EDEDED; --hero-sub: #C9C2C5;
+    --tab-inactive: #2A2A2A; --tab-inactive-text: #EDEDED;
+    --panel-bg: #1B1B1B; --panel-text: #EDEDED;
+    --accent: #C68CA6; --accent-soft: #B98B96;
+    --card-bg: #232323; --border: #3A3A3A; --grid-line: rgba(237,237,237,0.06);
+  }
+  html[data-theme="burgundyteal"] {
+    --hero-bg: #4B1E2F; --hero-text: #F7F3EE; --hero-sub: #E9E1D8;
+    --tab-inactive: #E9E1D8; --tab-inactive-text: #4B1E2F;
+    --panel-bg: #F7F3EE; --panel-text: #2B1620;
+    --accent: #6B2C3A; --accent-soft: #2E5854;
+    --card-bg: #FFFFFF; --border: #E5DCD1; --grid-line: rgba(247,243,238,0.06);
+  }
+  html[data-theme="plumpeach"] {
+    --hero-bg: #4B1E2F; --hero-text: #F8F3EE; --hero-sub: #E6D7CC;
+    --tab-inactive: #E6D7CC; --tab-inactive-text: #4B1E2F;
+    --panel-bg: #F8F3EE; --panel-text: #2B1620;
+    --accent: #6A2E3A; --accent-soft: #B05C3E;
+    --card-bg: #FFFFFF; --border: #EFE2D8; --grid-line: rgba(248,243,238,0.06);
+  }
+  html[data-theme="plumblue"] {
+    --hero-bg: #2B0F1B; --hero-text: #F7F5F2; --hero-sub: #D9D4CE;
+    --tab-inactive: #D9D4CE; --tab-inactive-text: #2B0F1B;
+    --panel-bg: #F7F5F2; --panel-text: #221019;
+    --accent: #5C2433; --accent-soft: #2354B8;
+    --card-bg: #FFFFFF; --border: #E4E0DA; --grid-line: rgba(59,130,246,0.10);
+  }
+  html[data-theme="moss"] {
+    --hero-bg: #4B1E2F; --hero-text: #F5F2EC; --hero-sub: #C9C3B8;
+    --tab-inactive: #C9C3B8; --tab-inactive-text: #4B1E2F;
+    --panel-bg: #F5F2EC; --panel-text: #2B1620;
+    --accent: #6D2E3A; --accent-soft: #4C5949;
+    --card-bg: #FFFFFF; --border: #E4E0D5; --grid-line: rgba(245,242,236,0.06);
+  }
+  html[data-theme="slaterose"] {
+    --hero-bg: #1D1F22; --hero-text: #F6F1EC; --hero-sub: #C7CACE;
+    --tab-inactive: #4F545A; --tab-inactive-text: #F6F1EC;
+    --panel-bg: #F6F1EC; --panel-text: #1D1F22;
+    --accent: #8A1F2E; --accent-soft: #A94456;
+    --card-bg: #FFFFFF; --border: #E5DCD5; --grid-line: rgba(246,241,236,0.06);
+  }
+  html[data-theme="maroonteal"] {
+    --hero-bg: #1F2630; --hero-text: #F4EFEA; --hero-sub: #D9BE8F;
+    --tab-inactive: #C9A36A; --tab-inactive-text: #1F2630;
+    --panel-bg: #F4EFEA; --panel-text: #24201B;
+    --accent: #6A0F2C; --accent-soft: #0C5450;
+    --card-bg: #FFFFFF; --border: #E7DFD2; --grid-line: rgba(244,239,234,0.06);
+  }
+  html[data-theme="plumelectric"] {
+    --hero-bg: #2A0C1A; --hero-text: #F1FAEE; --hero-sub: #DBB0BF;
+    --tab-inactive: #5E1430; --tab-inactive-text: #F1FAEE;
+    --panel-bg: #F1FAEE; --panel-text: #241019;
+    --accent: #9B2140; --accent-soft: #205FCB;
+    --card-bg: #FFFFFF; --border: #DCEAE0; --grid-line: rgba(58,134,255,0.10);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-body);
+    background: var(--panel-bg);
+    color: var(--panel-text);
+    transition: background .4s ease, color .4s ease;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- THEME SWATCHER ---------- */
+  .swatcher {
+    position: fixed; top: 0; right: 0; z-index: 50;
+    display: flex; gap: 0;
+    background: rgba(0,0,0,0.12); backdrop-filter: blur(4px);
+    border-radius: 0 0 0 8px; overflow: hidden;
+  }
+  .swatch {
+    width: 22px; height: 6px; border: none; border-radius: 0;
+    cursor: pointer; padding: 0; opacity: 0.7;
+    transition: opacity .15s ease, height .15s ease;
+  }
+  .swatch:hover { opacity: 1; }
+  .swatch.active { opacity: 1; height: 9px; }
+  .swatch[data-t="plum"] { background: #6D2E3A; }
+  .swatch[data-t="plumgreen"] { background: linear-gradient(90deg,#4B1E2F 50%,#7C9878 50%); }
+  .swatch[data-t="blush"] { background: #9C5A68; }
+  .swatch[data-t="pinkgreen"] { background: linear-gradient(90deg,#93AD75 50%,#D8A7A7 50%); }
+  .swatch[data-t="noir"] { background: #121212; }
+  .swatch[data-t="burgundyteal"] { background: linear-gradient(90deg,#6B2C3A 50%,#2E5854 50%); }
+  .swatch[data-t="plumpeach"] { background: linear-gradient(90deg,#4B1E2F 50%,#F2B8A0 50%); }
+  .swatch[data-t="plumblue"] { background: linear-gradient(90deg,#2B0F1B 50%,#2354B8 50%); }
+  .swatch[data-t="moss"] { background: linear-gradient(90deg,#6D2E3A 50%,#4C5949 50%); }
+  .swatch[data-t="slaterose"] { background: linear-gradient(90deg,#1D1F22 50%,#A94456 50%); }
+  .swatch[data-t="maroonteal"] { background: linear-gradient(90deg,#1F2630 50%,#C9A36A 50%); }
+  .swatch[data-t="plumelectric"] { background: linear-gradient(90deg,#2A0C1A 50%,#205FCB 50%); }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    position: relative;
+    background-color: var(--hero-bg); color: var(--hero-text);
+    background-image:
+      radial-gradient(900px 480px at 88% -15%, rgba(255,255,255,0.05), transparent 60%),
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: auto, 42px 42px, 42px 42px;
+    background-position: 0 0, 6vw 0, 6vw 0;
+    padding: 3.8rem 6vw 4.2rem;
+    transition: background-color .4s ease;
+  }
+  .hero-top {
+    display: flex; justify-content: space-between; align-items: center;
+    max-width: 1180px; margin: 0 auto 2.2rem; position: relative;
+  }
+  .hero-grid {
+    display: grid; grid-template-columns: auto minmax(320px, 480px);
+    gap: 7.875rem; align-items: center; max-width: 1180px; margin: 0 auto; position: relative;
+  }
+  .hero-name {
+    font-family: var(--font-display); font-weight: 600;
+    font-size: clamp(2.2rem, 8vw, 6rem);
+    line-height: 1; letter-spacing: -0.01em; margin: 0;
+    white-space: nowrap;
+  }
+  .hero-name em {
+    font-style: italic; font-weight: 300; color: var(--hero-sub);
+  }
+  .hero-eyebrow {
+    font-family: var(--font-mono); font-size: 0.72rem;
+    letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.8; color: var(--hero-sub);
+  }
+  .hero-copy {
+    border-left: 1px solid var(--grid-line); padding-left: 2.2rem;
+  }
+  .hero-role {
+    display: block; font-family: var(--font-mono); font-size: 0.68rem;
+    letter-spacing: 0.04em; text-transform: uppercase; color: var(--hero-sub);
+    margin: 0 0 10px; white-space: nowrap;
+  }
+  .hero-intro { max-width: 480px; font-size: 0.98rem; line-height: 1.55; color: var(--hero-sub); margin: 0 0 14px; }
+  .hero-intro strong { color: var(--hero-text); font-weight: 600; }
+  .hero-tags {
+    display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 16px;
+  }
+  .hero-tags span {
+    font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.03em;
+    padding: 0.3rem 0.65rem; border-radius: 999px;
+    background: rgba(0,0,0,0.16); color: var(--hero-text);
+  }
+  .status-dot {
+    width: 7px; height: 7px; border-radius: 50%; background: #4EA85B;
+    box-shadow: 0 0 0 rgba(78,168,91,0.5); animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(78,168,91,0.5); }
+    70% { box-shadow: 0 0 0 6px rgba(78,168,91,0); }
+    100% { box-shadow: 0 0 0 0 rgba(78,168,91,0); }
+  }
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.02em;
+    color: var(--hero-text);
+    border: 1px solid var(--hero-sub); border-radius: 6px;
+    padding: 7px 14px; text-decoration: none; opacity: 0.9;
+    transition: opacity .2s ease, background .2s ease;
+  }
+  .hero-cta:hover { opacity: 1; background: rgba(255,255,255,0.08); }
+  @media (max-width: 720px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 1.6rem; }
+    .hero-copy { border-left: none; padding-left: 0; border-top: 1px solid var(--grid-line); padding-top: 1.1rem; }
+  }
+
+  .postit {
+    position: absolute; top: 100%; margin-top: 18px; right: 0; width: 220px;
+    background: #FCE98A; color: #241E10; z-index: 3;
+    padding: 14px 16px; font-family: var(--font-mono); font-size: 0.72rem;
+    line-height: 1.5; transform: rotate(-3deg);
+    box-shadow: 3px 5px 10px rgba(0,0,0,0.25);
+    border-radius: 1px;
+  }
+  .postit-label {
+    font-size: 0.62rem; letter-spacing: 0.06em; opacity: 0.75; margin: 0 0 6px; text-transform: uppercase;
+  }
+  .hero-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .status-pip {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font-mono); font-size: 0.7rem; color: var(--hero-text);
+    background: rgba(0,0,0,0.16); border-radius: 999px; padding: 0.3rem 0.65rem 0.3rem 0.5rem;
+  }
+  .postit-text::after { content: '|'; animation: blink 1.1s step-end infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  @media (max-width: 720px) {
+    .postit { position: static; margin: 6px 0 16px; transform: rotate(-1.5deg); width: 220px; max-width: 90vw; }
+  }
+
+  /* ---------- FILE TAB NAV (folder / chrome-tab style) ---------- */
+  .tab-nav {
+    display: flex; max-width: 1180px; margin: 0 auto; padding: 0 6vw;
+    gap: 6px; position: relative; top: 1px;
+  }
+  .tab-btn {
+    font-family: var(--font-mono); font-size: 0.76rem; letter-spacing: 0.01em;
+    padding: 12px 24px 10px; border: none; background: var(--tab-inactive);
+    color: var(--tab-inactive-text); cursor: pointer; position: relative;
+    transition: background .25s ease, transform .2s ease, opacity .25s ease;
+    opacity: 0.82; top: 6px; display: inline-flex; align-items: center; gap: 7px;
+    clip-path: polygon(14px 0, calc(100% - 14px) 0, 100% 100%, 0 100%);
+  }
+  .tab-btn::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: currentColor; opacity: 0.35;
+  }
+  .tab-btn:hover { opacity: 1; transform: translateY(-2px); }
+  .tab-btn.active {
+    background: var(--panel-bg); color: var(--accent); opacity: 1; top: 0;
+    font-weight: 500; box-shadow: 0 -6px 14px rgba(0,0,0,0.08); z-index: 2;
+  }
+  .tab-btn.active::before { opacity: 1; background: var(--accent); }
+
+  /* ---------- CONTENT PANEL ---------- */
+  .panel-wrap { background: var(--panel-bg); border-top: 1px solid var(--border); }
+  .panel { max-width: 1180px; margin: 0 auto; padding: 52px 6vw 90px; display: none; }
+  .panel.active { display: block; animation: fadeUp .4s ease; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .panel h2 { font-family: var(--font-display); font-weight: 500; font-size: 1.9rem; margin: 0 0 6px; }
+  .panel .panel-note {
+    font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.02em;
+    color: var(--accent); margin: 0 0 36px;
+  }
+  .panel-head { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 28px; }
+  .panel-head .panel-note { margin: 0; }
+
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+  .card {
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px;
+    padding: 20px 22px; border-left: 2px solid var(--border);
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .card.clickable { cursor: pointer; }
+  .card.clickable:hover { border-left-color: var(--accent); transform: translateY(-2px); }
+  .card .card-idx { font-family: var(--font-mono); font-size: 0.66rem; opacity: 0.55; margin: 0 0 8px; }
+  .card h3 { font-family: var(--font-display); font-size: 1.12rem; margin: 0 0 8px; }
+  .card p { font-size: 0.87rem; line-height: 1.5; margin: 0 0 12px; opacity: 0.9; }
+  .card { position: relative; }
+  .card.clickable::after {
+    content: "↗"; position: absolute; right: 18px; top: 17px;
+    font-family: var(--font-mono); font-size: 0.75rem; opacity: 0.25;
+    transition: opacity .2s ease, transform .2s ease;
+  }
+  .card.clickable:hover::after { opacity: 0.8; transform: translate(2px,-2px); }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.02em;
+    padding: 3px 9px; border-radius: 5px;
+    background: var(--card-bg); color: var(--panel-text);
+    border: 1px solid var(--accent-soft);
+  }
+
+  .timeline { border-left: 2px solid var(--border); padding-left: 26px; display: flex; flex-direction: column; gap: 24px; }
+  .t-item { position: relative; }
+  .t-item::before {
+    content: ''; position: absolute; left: -33px; top: 4px;
+    width: 9px; height: 9px; border-radius: 50%; background: var(--accent);
+  }
+  .t-item h3 { font-family: var(--font-display); font-size: 1.05rem; margin: 0 0 2px; }
+  .t-org { font-family: var(--font-body); font-size: 0.85rem; font-weight: 500; opacity: 0.8; margin: 0 0 8px; }
+  .t-tags { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0 0 4px; }
+  .t-meta { font-family: var(--font-mono); font-size: 0.68rem; opacity: 0.6; margin: 0; }
+  .t-relevance { font-family: var(--font-mono); font-size: 0.65rem; opacity: 0.55; border-left: 1px solid var(--border); padding-left: 10px; }
+  .t-item p { font-size: 0.87rem; line-height: 1.5; opacity: 0.9; margin: 0; }
+
+  .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 44px; }
+  .about-grid p { font-size: 0.95rem; line-height: 1.65; opacity: 0.92; }
+  .contact-list { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-direction: column; gap: 10px; font-family: var(--font-mono); font-size: 0.82rem; }
+  .contact-list a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft); }
+  .skill-block { margin-top: 22px; }
+  .skill-block h4 { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.04em; opacity: 0.7; margin: 0 0 8px; }
+
+  /* ---------- PROJECT MODAL ---------- */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 100;
+    background: rgba(10,8,9,0.6); align-items: center; justify-content: center; padding: 24px;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--card-bg); color: var(--panel-text);
+    max-width: 580px; width: 100%; max-height: 85vh; overflow-y: auto;
+    border-radius: 14px; padding: 34px; position: relative;
+  }
+  .modal-close {
+    position: absolute; top: 16px; right: 16px; width: 30px; height: 30px;
+    border-radius: 50%; border: 1px solid var(--border); background: none;
+    color: var(--panel-text); font-size: 1.1rem; cursor: pointer; line-height: 1;
+  }
+  .modal-img-wrap { margin: 0 0 18px; display: flex; flex-direction: column; gap: 10px; }
+  .modal-img-wrap img { width: 100%; border-radius: 8px; display: block; }
+  .modal-img-placeholder {
+    border: 1px dashed var(--border); border-radius: 8px; padding: 30px 16px;
+    text-align: center; font-family: var(--font-mono); font-size: 0.75rem; opacity: 0.55;
+  }
+  .modal h3 { font-family: var(--font-display); font-size: 1.5rem; margin: 0 0 10px; }
+  .modal .tags { margin-bottom: 16px; }
+  .modal h4 { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.04em; opacity: 0.65; margin: 18px 0 5px; }
+  .modal p { font-size: 0.92rem; line-height: 1.6; margin: 0; opacity: 0.92; }
+  .modal-repo-link {
+    display: inline-block; font-family: var(--font-mono); font-size: 0.78rem;
+    color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft);
+  }
+  .modal-embed { margin: 16px 0; }
+  .modal-embed iframe, .modal-embed img { width: 100%; border-radius: 8px; border: none; }
+
+  footer {
+    text-align: center; padding: 28px 6vw 40px; font-family: var(--font-mono);
+    font-size: 0.7rem; opacity: 0.6; letter-spacing: 0.02em;
+  }
+
+  @media (max-width: 720px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .tab-nav { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ::selection { background: #2F6FED; color: #F5F1EC; }
+  ::-moz-selection { background: #2F6FED; color: #F5F1EC; }
+</style>
+</head>
+<body>
+
+<div class="swatcher" role="group" aria-label="Theme picker">
+  <button class="swatch" data-t="plum" title="Plum / Burgundy"></button>
+  <button class="swatch" data-t="plumgreen" title="Plum / Burgundy (OG green)"></button>
+  <button class="swatch" data-t="blush" title="Blush / Charcoal"></button>
+  <button class="swatch" data-t="pinkgreen" title="Pink & Green"></button>
+  <button class="swatch" data-t="noir" title="Noir"></button>
+  <button class="swatch" data-t="burgundyteal" title="Burgundy / Teal"></button>
+  <button class="swatch" data-t="plumpeach" title="Plum / Peach"></button>
+  <button class="swatch" data-t="plumblue" title="Plum / Electric Blue"></button>
+  <button class="swatch" data-t="moss" title="Burgundy / Moss"></button>
+  <button class="swatch" data-t="slaterose" title="Slate / Rose"></button>
+  <button class="swatch" data-t="maroonteal" title="Maroon / Teal"></button>
+  <button class="swatch" data-t="plumelectric" title="Plum / Electric"></button>
+</div>
+
+<header class="hero">
+  <div class="hero-top">
+    <span class="hero-eyebrow">Portfolio</span>
+  </div>
+  <div class="hero-grid">
+    <h1 class="hero-name">Tumi <em>Seweje</em></h1>
+    <div class="hero-copy">
+      <span class="hero-role">MEng Chemical Engineering, University of Nottingham</span>
+      <p class="hero-intro">First Class chemical engineering student blending<br>process design, data and creativity.</p>
+      <div class="hero-tags">
+        <span>Process Design</span><span>Data &amp; Systems</span><span>Leadership</span>
+      </div>
+      <div class="postit">
+        <p class="postit-label">currently</p>
+        <p class="postit-text" id="postitText"></p>
+      </div>
+      <div class="hero-actions">
+        <span class="status-pip"><span class="status-dot"></span>Open to internships</span>
+        <a class="hero-cta" href="cv.pdf" target="_blank" rel="noopener">↓ Download CV</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="tab-nav" role="tablist" aria-label="Portfolio sections">
+  <button class="tab-btn active" data-tab="projects" role="tab" aria-selected="true">projects</button>
+  <button class="tab-btn" data-tab="experience" role="tab" aria-selected="false">experience</button>
+  <button class="tab-btn" data-tab="about" role="tab" aria-selected="false">about</button>
+</nav>
+
+<div class="panel-wrap">
+
+  <section class="panel active" id="projects">
+    <div class="panel-head">
+      <h2>Projects</h2><p class="panel-note">Click a project for the full write-up.</p>
+    </div>
+    <div class="card-grid" id="projectsGrid"></div>
+  </section>
+
+  <section class="panel" id="experience">
+    <div class="panel-head">
+      <h2>Experience</h2><p class="panel-note">Work, leadership and industry experience.</p>
+    </div>
+    <div class="timeline" id="experienceList"></div>
+  </section>
+
+  <section class="panel" id="about">
+    <div class="panel-head">
+      <h2>About</h2><p class="panel-note">Who's behind this.</p>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>I'm a third-year MEng Chemical Engineering student at the University of Nottingham, currently First Class, spending this year on academic exchange at the China campus in Ningbo.</p>
+        <p>My focus is process design and data-driven systems, with a growing interest in how that applies to more sustainable engineering. I like using data to make decisions clearer, not just faster, and the same instinct carries into how I lead. As VP of the Women's Engineering Society and Sponsorship Liaison for Frank Morton 2026, I care as much about how something is communicated as how it's built.</p>
+        <p>Outside of engineering, I paint and draw, most of it stays in sketchbooks rather than anywhere public, and take on graphic design work like this site, which I designed and built myself. I like work that sits at the intersection of structure and creativity, whether that's a process diagram or a page layout.</p>
+      </div>
+      <div>
+        <h3 style="font-family:var(--font-display); font-size:1rem; margin:0 0 12px;">Contact</h3>
+        <ul class="contact-list">
+          <li><a href="#">Email: add address</a></li>
+          <li><a href="#">LinkedIn: add link</a></li>
+          <li><a href="#">GitHub: add link</a></li>
+        </ul>
+        <div class="skill-block">
+          <h4>Skills</h4>
+          <div class="tags">
+            <span class="tag">Process Design</span><span class="tag">Data Analysis</span>
+            <span class="tag">Leadership</span><span class="tag">Collaboration</span><span class="tag">Creativity</span>
+            <span class="tag">Time Management</span><span class="tag">Problem Solving</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <h4>Languages</h4>
+          <div class="tags">
+            <span class="tag">English, Native</span><span class="tag">Russian, Basic</span>
+            <span class="tag">Japanese, Basic</span><span class="tag">Mandarin, Beginner</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>Tumi Seweje, 2026</footer>
+
+<div class="modal-overlay" id="projectModal">
+  <div class="modal">
+    <button class="modal-close" id="modalCloseBtn" aria-label="Close">×</button>
+    <div class="modal-img-wrap" id="modalImage"></div>
+    <h3 id="modalTitle"></h3>
+    <div class="tags" id="modalTags"></div>
+    <p id="modalRepo"></p>
+    <div class="modal-embed" id="modalEmbed"></div>
+    <h4>Overview</h4><p id="modalOverview"></p>
+    <h4>Approach</h4><p id="modalApproach"></p>
+    <h4>Tools</h4><p id="modalStack"></p>
+    <h4>Results</h4><p id="modalResults"></p>
+    <h4>Reflection</h4><p id="modalReflection"></p>
+  </div>
+</div>
+
+<script>
+  /* =========================================================
+     CONTENT: everything below is what actually shows on the
+     site. To add or change a project, experience entry, or
+     leadership role, edit these three lists. Nothing else in
+     this file needs to change.
+
+     PROJECTS: one object per card:
+       idx        "001" style label shown on the card
+       title      card heading
+       tags       short array of keyword tags, e.g. ['Python']
+       overview   1–2 sentence summary shown on the card itself
+       approach   longer "how I did it", shown when opened
+       stack      tools/software used, shown when opened
+       results    quantified outcome, shown when opened. This
+                  is the field worth filling in properly: a
+                  number or concrete spec met beats a description
+       reflection what you'd improve/learned, shown when opened
+       images     array of image paths/URLs, e.g. ['images/a.jpg',
+                  'images/b.png']. Put files next to this HTML file,
+                  or use full URLs (Imgur/GitHub etc). Empty array
+                  [] for no images. As many as you like, they stack.
+       embed      raw HTML snippet, e.g. an <iframe> for a Power BI
+                  or Tableau dashboard, a video, or a Figma embed.
+                  For more than one, just put multiple <iframe>
+                  tags back to back inside the same string.
+                  Leave as null to skip.
+       repo       full GitHub repo URL, e.g. 'https://github.com/
+                  you/reboiler-fouling-dashboard'. Shows as a
+                  "View code on GitHub" link when opened. Leave
+                  as null if there's no repo for this project yet.
+
+     To add a new project: copy one { ... } block below, paste
+     it as a new entry (don't forget the comma), edit the text.
+
+     EXPERIENCE: title / meta (dates or a headline stat) / desc.
+     Newest first, add new entries at the TOP of the list.
+
+     Leadership entries now live inside EXPERIENCE, same shape
+     fields (idx / title / tags / desc).
+     ========================================================= */
+  const projects = [
+    { idx:'001', title:'Reboiler Fouling Detection Dashboard', tags:['Power BI','Excel','Process Monitoring'],
+      overview:'Power BI dashboard analysing 30 days of simulated distillation column data to detect and quantify a reboiler fouling event.',
+      approach:'Generated 720 hours of feed flow, feed temperature, reflux ratio, reboiler duty, distillate purity and pressure data in Excel, modelling a gradual duty increase alongside a purity decline during a fouling window followed by a recovery. Loaded the cleaned dataset into Power BI and built time-series and correlation visuals to isolate the event from normal operating noise.',
+      stack:'Excel, Power BI.',
+      reflection:'With more time, I\'d add a rolling-average trigger that flags the fouling window automatically rather than relying on visual inspection, and test the same approach against a real plant dataset.',
+      results:'[Add your actual minimum purity value and duty increase once the dashboard is built]', images:[], embed:null, repo:null },
+    { idx:'002', title:'Water Treatment Works', tags:['Year 1','AutoCAD','P&ID'],
+      overview:'Designed a 3 MLD-supply potable water treatment plant with a team of five, balancing safety, robustness and cost.',
+      approach:'Worked through mass/energy balances as a team before splitting into design streams; I focused on the P&ID and General Arrangement drawings.',
+      stack:'AutoCAD, hand calculations, Excel.',
+      reflection:'[Add what you\'d improve or do differently next time]',
+      results:'[Add a quantified outcome, e.g. cost/time saved, accuracy achieved, a spec met]', images:[], embed:null, repo:null },
+    { idx:'003', title:'Biogas DEA Sweetening Plant', tags:['CHEE2048','Heat Transfer','Control'],
+      overview:'Group design project for a DEA sweetening plant: full P&IDs, a Functional Design Specification and Control Philosophy, plus air-cooled heat exchanger sizing (~828 tubes across 6 bundles).',
+      approach:'Split the project into three linked pieces. First, sized the air-cooled exchanger for lean amine service using the GPSA/Hudson NTU method. Then wrote the control philosophy so instrumentation and control loops matched the process intent. Finally, brought both together into the P&IDs and Functional Design Specification.',
+      stack:'Excel, GPSA design charts.',
+      reflection:'[Add what you\'d improve or do differently next time]',
+      results:'[Add a quantified outcome, e.g. cost/time saved, accuracy achieved, a spec met]', images:[], embed:null, repo:null },
+    { idx:'004', title:'McCabe-Thiele Distillation Analysis', tags:['Separations','Excel'],
+      overview:'Multi-variable stage-stepping distillation analysis using Goal Seek/Solver methods, Antoine equations and plate efficiency calculations.',
+      approach:'Used Goal Seek/Solver to step through equilibrium stages, applying Antoine equations for vapour-liquid equilibrium.',
+      stack:'Excel, Antoine equation data.',
+      reflection:'[Add what you\'d improve or do differently next time]',
+      results:'[Add a quantified outcome, e.g. cost/time saved, accuracy achieved, a spec met]', images:[], embed:null, repo:null },
+    { idx:'005', title:'Numerical Methods (Python)', tags:['Python'],
+      overview:'Advection-diffusion PDE solvers, sparse matrix methods and composite Simpson\'s rule.',
+      approach:'Implemented sparse matrix solvers for advection-diffusion PDEs and composite Simpson\'s rule for numerical integration.',
+      stack:'Python.',
+      reflection:'[Add what you\'d improve or do differently next time]',
+      results:'[Add a quantified outcome, e.g. cost/time saved, accuracy achieved, a spec met]', images:[], embed:null, repo:null },
+    { idx:'006', title:'MEng Grade Calculator', tags:['Independent Build','Web App'],
+      overview:'Browser-based tool modelling the four-year MEng weighting structure against the First Class threshold, with full software documentation.',
+      approach:'Modelled the 0/20/40/40% year-weighting structure against the 69.5% First Class threshold to track standing in real time.',
+      stack:'[Add build stack, e.g. HTML/CSS/JS]',
+      reflection:'[Add what you\'d improve or do differently next time]',
+      results:'[Add a quantified outcome, e.g. cost/time saved, accuracy achieved, a spec met]', images:[], embed:null, repo:null },
+    { idx:'007', title:'Butex Sustainability Poster', tags:['Design','Sustainability'],
+      overview:'Scholarship submission built around the China exchange year and an ecological design philosophy, with original data visualisations.',
+      approach:'Built the poster around the ecological philosophy behind the China exchange year, designing original data visualisations to carry the argument.',
+      stack:'Canva Pro.',
+      reflection:'[Add what you\'d improve or do differently next time]',
+      results:'[Add a quantified outcome, e.g. cost/time saved, accuracy achieved, a spec met]', images:[], embed:null, repo:null },
+    { idx:'008', title:'Process Intelligence (planned)', tags:['Independent','Python','Sustainability'],
+      overview:'Planned independent project combining process modelling, Python and carbon/energy optimisation.',
+      approach:'Starting from a realistic separations process, build an engineering model, run sensitivity/optimisation scenarios, and communicate results through an interactive dashboard.',
+      stack:'Python, process modelling, Power BI/Tableau.',
+      reflection:'Planned build. Methodology, assumptions and results will be documented as it develops.',
+      results:'[Not yet started]', images:[], embed:null, repo:null }
+  ];
+
+  const experience = [
+    { role:'Vice President', org:'Women\'s Engineering Society', location:null, meta:'Since Jul 2025', relevance:'Leadership',
+      desc:'Jointly lead committee operations and engagement for a 50+ member society. Ran a STEM outreach event with the Royal Aeronautical Society and Rolls-Royce Derby, teaching primary schoolers via balloon rocket activities. Also serve as a STEM Ambassador.' },
+    { role:'Sponsorship Liaison', org:'Frank Morton 2026 Committee', location:null, meta:'Since Sep 2025', relevance:'Leadership',
+      desc:'Managing sponsor relationships and outreach for one of the UK\'s largest student engineering events, drawing hundreds of chemical engineering students.' },
+    { role:'Student Member', org:'IChemE', location:null, meta:'Since Sep 2024', relevance:'Professional body',
+      desc:'Institution of Chemical Engineers student membership, working toward Chartered status.' },
+    { role:'Data Analytics Job Simulation', org:'Deloitte (via Forage)', location:null, meta:'Virtual programme', relevance:'Transferable, data skills',
+      desc:'Completed Deloitte\'s Forage virtual job simulation, working through a data analysis task modelled on real client work.' },
+    { role:'Data Analytics Certification', org:'Google', location:null, meta:'Nov 2024 to Jul 2025', relevance:'Transferable, data skills',
+      desc:'Built dashboards and analysis workflows in Excel, SQL, R and Tableau.' },
+    { role:'Finance Accelerator', org:'AmplifyME', location:null, meta:'Ranked 1st of 170', relevance:'Transferable',
+      desc:'Competitive finance simulation accelerator.' },
+    { role:'Animation Intern', org:'Sliced Bread Animation', location:null, meta:'Internship', relevance:'Transferable',
+      desc:'Internship spanning the arts sector, alongside engineering, finance and data-focused work.' },
+    { role:'Insight Week', org:'Phillips 66', location:'London', meta:'Sep 2024', relevance:'Industry, energy sector',
+      desc:'Rotated across Treasury, Credit, Cargo Operations and Tax at a global energy company.' },
+    { role:'Work Experience', org:'Bank of America Merrill Lynch', location:'London', meta:'Aug 2024', relevance:'Transferable',
+      desc:'Engaged with trading, cybersecurity, operations and risk management teams to learn what financial and data-focused roles value.' },
+    { role:'Retail Sales Assistant', org:'Marks & Spencer', location:null, meta:'Nov 2023 to Jan 2024', relevance:'Transferable',
+      desc:'Supported shop operations, stock management and customer service in a fast-paced environment.' }
+  ];
+
+  function renderProjects() {
+    const grid = document.getElementById('projectsGrid');
+    grid.innerHTML = projects.map((p, i) => `
+      <div class="card clickable" data-idx="${i}">
+        <p class="card-idx">${p.idx}</p>
+        <h3>${p.title}</h3>
+        <p>${p.overview}</p>
+        <div class="tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+      </div>`).join('');
+    grid.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => openModal(projects[card.dataset.idx]));
+    });
+  }
+
+  function renderExperience() {
+    document.getElementById('experienceList').innerHTML = experience.map(e => `
+      <div class="t-item">
+        <h3>${e.role}</h3>
+        <p class="t-org">${e.org}${e.location ? ', ' + e.location : ''}</p>
+        <div class="t-tags"><span class="t-meta">${e.meta}</span><span class="t-relevance">${e.relevance}</span></div>
+        <p>${e.desc}</p>
+      </div>`).join('');
+  }
+
+  function openModal(p) {
+    document.getElementById('modalImage').innerHTML = (p.images && p.images.length)
+      ? p.images.map(src => `<img src="${src}" alt="${p.title}">`).join('')
+      : `<div class="modal-img-placeholder">+ add images: push filenames into the "images" array for this project</div>`;
+    document.getElementById('modalTitle').textContent = p.title;
+    document.getElementById('modalTags').innerHTML = p.tags.map(t => `<span class="tag">${t}</span>`).join('');
+    document.getElementById('modalRepo').innerHTML = p.repo
+      ? `<a href="${p.repo}" target="_blank" rel="noopener" class="modal-repo-link">View code on GitHub &#8594;</a>`
+      : '';
+    document.getElementById('modalEmbed').innerHTML = p.embed || '';
+    document.getElementById('modalOverview').textContent = p.overview;
+    document.getElementById('modalApproach').textContent = p.approach;
+    document.getElementById('modalStack').textContent = p.stack;
+    document.getElementById('modalResults').textContent = p.results;
+    document.getElementById('modalReflection').textContent = p.reflection;
+    document.getElementById('projectModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('projectModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
+  document.getElementById('projectModal').addEventListener('click', e => {
+    if (e.target.id === 'projectModal') closeModal();
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  renderProjects();
+  renderExperience();
+
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected','true');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  const swatches = document.querySelectorAll('.swatch');
+  swatches.forEach(s => {
+    s.addEventListener('click', () => {
+      document.documentElement.setAttribute('data-theme', s.dataset.t);
+      swatches.forEach(x => x.classList.remove('active'));
+      s.classList.add('active');
+    });
+  });
+  document.querySelector('.swatch[data-t="plum"]').classList.add('active');
+
+  /* Two lines cycling here. To go back to a single static line,
+     just remove the second array entry. */
+  const postitLines = [
+    "between spreadsheets, dashboards and sketchbooks.",
+    "on a year-long exchange in Ningbo, China!"
+  ];
+  const target = document.getElementById('postitText');
+  let lineIdx = 0, charIdx = 0, deleting = false;
+  function typeLoop() {
+    const current = postitLines[lineIdx];
+    if (!deleting) {
+      charIdx++;
+      target.textContent = current.slice(0, charIdx);
+      if (charIdx === current.length) {
+        deleting = true;
+        setTimeout(typeLoop, 4200);
+        return;
+      }
+      setTimeout(typeLoop, 28);
+    } else {
+      charIdx--;
+      target.textContent = current.slice(0, charIdx);
+      if (charIdx === 0) {
+        deleting = false;
+        lineIdx = (lineIdx + 1) % postitLines.length;
+        setTimeout(typeLoop, 300);
+        return;
+      }
+      setTimeout(typeLoop, 14);
+    }
+  }
+  typeLoop();
+</script>
+
+</body>
+</html>
